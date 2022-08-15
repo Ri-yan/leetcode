@@ -20,8 +20,8 @@ class Solution {
                    break;
            }
        }
-        for(int i=0;i<s.length()-1;i++){
-            if(num[i]<num[i+1]){
+        for(int i=0;i<num.length-1;i++){
+            if(num[i]<num[i+1] && i!=num.length-1){
                 result-=num[i];
             }else{
                  result+=num[i];
