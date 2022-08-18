@@ -28,6 +28,7 @@ class Solution {
             temp1=temp1.next;
         }
         temp1.next=temp1.next.next;
+        temp1=temp2=null;
         return head;
     }
 }
