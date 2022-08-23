@@ -20,6 +20,7 @@ class Solution {
             head=head.next;
         }
         head=temp2;
+        temp2=null;
         return head;
     }
 }
