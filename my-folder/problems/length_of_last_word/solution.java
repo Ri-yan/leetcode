@@ -11,11 +11,11 @@ class Solution {
             if(s.charAt(i)==' ')
             break;
         }
-       i+=2;
+       // i+=2;
         // System.out.println("i "+i);
         // System.out.println("l "+s.length());
         // System.out.println("count "+count);
-        
-        return (s.length()-i)+1;
+        i+=1;
+        return (s.length()-i);
     }
 }
