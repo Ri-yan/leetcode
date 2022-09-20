@@ -19,32 +19,57 @@ class Solution {
         if (list2 == null) {
             return list1;
         }
-        ListNode head;
-        ListNode temp;
-        ListNode h = null;
-       List<Integer> s = new ArrayList<>();
-        while(list1!=null){
-            s.add(list1.val);
-            list1=list1.next;
-        }
-         while(list2!=null){
-            s.add(list2.val);
-            list2=list2.next;
-        }
-        Collections.sort(s);
-        //System.out.println(s);
+        // ListNode head;
+        // ListNode temp;
+//         ListNode h = null;
+//        List<Integer> s = new ArrayList<>();
+//         while(list1!=null){
+//             s.add(list1.val);
+//             list1=list1.next;
+//         }
+//          while(list2!=null){
+//             s.add(list2.val);
+//             list2=list2.next;
+//         }
+//         Collections.sort(s);
+//         //System.out.println(s);
         
-       head=new ListNode (s.remove(0).intValue());
-       //System.out.println(s);
-        temp=head;
-        for(Integer i : s){
-            ListNode newNode=new ListNode(i.intValue());
-            temp.next=newNode;
+//        head=new ListNode (s.remove(0).intValue());
+//        //System.out.println(s);
+//         temp=head;
+//         for(Integer i : s){
+//             ListNode newNode=new ListNode(i.intValue());
+//             temp.next=newNode;
+//             temp=temp.next;
+//         }
+        
+        
+        
+//         return head;
+        
+        
+         ListNode head=new ListNode();
+        ListNode temp=head;
+        
+        while(list1!=null && list2!=null){
+            if(list1.val<list2.val){
+                temp.next=list1;
+                list1=list1.next;
+            }
+            else{
+                  temp.next=list2;
+                list2=list2.next;
+            }
             temp=temp.next;
         }
         
+        if(list1!=null){
+            temp.next=list1;
+        }else if(list2!=null){
+            temp.next=list2;
+        }
+        return head.next;
         
         
-        return head;
     }
 }
