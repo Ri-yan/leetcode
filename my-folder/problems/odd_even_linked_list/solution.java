@@ -15,7 +15,7 @@ class Solution {
     ListNode result = head;
     ListNode p1 = head;
     ListNode p2 = head.next;
-    ListNode connectNode = head.next;
+    ListNode connectNode = p2;
  
     while(p1 != null && p2 != null){
             ListNode t = p2.next;
