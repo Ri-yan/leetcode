@@ -21,7 +21,7 @@ class Solution {
            }
        }
         for(int i=0;i<num.length-1;i++){
-            if(num[i]<num[i+1] && i!=num.length-1){
+            if(num[i]<num[i+1]){
                 result-=num[i];
             }else{
                  result+=num[i];
