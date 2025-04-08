@@ -1,16 +1,22 @@
 public class Solution {
-    public int NumSubarraysWithSum(int[] nums, int goal) {
-        int n = nums.Length;
-        int count =0;
-        for (int i = 0; i < n; i++) {
-            int sum = 0;
-            for (int j = i; j < n; j++) {
-                sum += nums[j];  // Add the current element to the sum
-                if (sum == goal) {  // If the sum matches the goal
-                    count++;
-                }
-            }
+    public int HelperNumSubarraysWithSum(int[] nums, int goal) {
+        if(goal<0) return 0;
+        int l=0,r=0,c=0,sum=0;
+        int n= nums.Length;
+        while(r<n){
+             sum=sum+nums[r];
+             while(sum>goal){
+                sum-=nums[l];
+                l++;
+             }
+             c += r-l+1;
+            r++;
         }
-        return count;
+       
+        return c;
+    }
+    public int NumSubarraysWithSum(int[] nums, int goal) {
+        if(goal<0) return 0;
+       return HelperNumSubarraysWithSum(nums,goal)-HelperNumSubarraysWithSum(nums,goal-1);
     }
 }
