@@ -33,13 +33,13 @@ public class Solution {
 
     public int SumSubarrayMins(int[] arr) {
         int n = arr.Length;
-        int[] nse = NSE(arr); // Next Smaller Element Indexes
-        int[] pse = PSE(arr); // Previous Smaller Element Indexes
+        int[] nse = NSE(arr); 
+        int[] pse = PSE(arr); 
         long sum = 0;
 
         for (int i = 0; i < n; i++) {
-            long left = i - pse[i];  // Number of subarrays where arr[i] is the minimum (left side)
-            long right = nse[i] - i; // Number of subarrays where arr[i] is the minimum (right side)
+            long left = i - pse[i];  
+            long right = nse[i] - i; 
             sum = (sum + (arr[i] * left % mod * right % mod) % mod) % mod;
         }
 
