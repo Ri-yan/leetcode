@@ -18,7 +18,6 @@ public class Solution {
         while (mid <= high) {
             if (nums[mid] == 0) {
                  (nums[mid],nums[low])=(nums[low],nums[mid]);
-
                 low++;
                 mid++;
 
@@ -26,9 +25,7 @@ public class Solution {
                 mid++;
 
             } else {
-                // swapping nums[mid] and nums[high]
                (nums[mid],nums[high])=(nums[high],nums[mid]);
-
                 high--;
             }}
     }
