@@ -11,19 +11,14 @@
  */
 public class Solution {
     public ListNode ReverseList(ListNode head) {
-        var temp=head;
-        Stack<int> s = new Stack<int>();
-
-        while(temp!=null){
-            s.Push(temp.val);
-            temp=temp.next;
+        ListNode prev = null;
+        ListNode temp = head;
+        while (temp != null) {
+            ListNode front = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = front;
         }
- temp=head;
-        while(head!=null){
-            head.val=s.Pop();
-
-            head=head.next;
-        }
-        return temp;
+        return prev;
     }
 }
